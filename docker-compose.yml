@@ -1,0 +1,27 @@
+version: "1"
+services:
+  app_frontend:
+    build: ../../frontEnd
+    ports:
+      - "3000:80"
+    links:
+      - app_backend
+  app_backend:
+    build: .
+    ports:
+      - "8081:8081"
+    links:
+      - db_postgres
+  db_postgres:
+    image: postgres
+    ports:
+      - "8080:5432"
+    environment:
+      - POSTGRES_USER=roro
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=metasapp
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
