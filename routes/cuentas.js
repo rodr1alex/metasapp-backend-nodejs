@@ -34,7 +34,7 @@ router.post(
 
             //Se crea token usando metodo jwt.sign     
             let ficha = jwt.sign({
-              exp: Math.floor(Date.now()/1000) + 300,
+              exp: Math.floor(Date.now()/1000) + 3000,
               cuenta_id: cuenta.cuenta_id,
               nick: cuenta.nick
             },'secreto');

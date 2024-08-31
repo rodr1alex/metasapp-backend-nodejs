@@ -21,7 +21,7 @@ function crearMeta(item, callback){
 
 function pedirMetas(cuenta_id, callback){
     const tabla = 'metas';
-    db.any(`SELECT * FROM ${tabla} WHERE cuenta_id=${cuenta_id}`)
+    db.any(`SELECT * FROM ${tabla} WHERE cuenta_id=${cuenta_id} ORDER BY meta_id`)
     .then(resultado =>{
         resultado.map(meta => {
             meta.plazo = meta.plazo.toISOString().split('T')[0]

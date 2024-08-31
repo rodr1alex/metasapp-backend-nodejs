@@ -3,12 +3,12 @@ const pgp = require('pg-promise')(initOption);
 
 const cn = {
     user: 'roro',
-    password: 'tNP3n5QqF0KIOIZMgCKPdOpfRI9DAs9Z',
-    host: 'dpg-cr32smo8fa8c739b8ksg-a.oregon-postgres.render.com',
+    password: 'PtRBQ5sY4fIG1AMPgVC4',
+    host: 'metasapp-db.ch6wwaqewb9i.sa-east-1.rds.amazonaws.com',
     port: 5432,
-    database: 'metasapp_nxgo',
+    database: 'metasapp',
     ssl: {
-        rejectUnauthorized: true // Establece esto en true si deseas verificar el certificado
+        rejectUnauthorized: false // Establece esto en true si deseas verificar el certificado
         // Opcionalmente, puedes añadir ca, key, y cert si son necesarios
         // ca: fs.readFileSync('/path/to/ca.crt').toString(),
         // key: fs.readFileSync('/path/to/client.key').toString(),
